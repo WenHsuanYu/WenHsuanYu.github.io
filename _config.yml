@@ -48,6 +48,8 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace: ''
+  exclude_languages:
+    - mermaid
   wrap: true
   hljs: false
 prismjs:
@@ -128,3 +130,20 @@ symbols_count_time:
 sitemap:
   path: sitemap.xml
 
+
+pandoc:
+  args:
+    - "-f"
+    - "markdown"
+    - "-t"
+    - "html"
+    - "--mathjax"
+    - '--lua-filter'
+    - './source/_data/header-link-filter.lua'
+
+
+search:
+  path: search.xml
+  field: all
+  content: true
+  template: ./search.xml

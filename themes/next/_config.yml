@@ -535,7 +535,7 @@ pdf:
 
 # Mermaid tag
 mermaid:
-  enable: false
+  enable: true
   # Available themes: default | dark | forest | neutral
   theme:
     light: default
@@ -562,12 +562,12 @@ math:
   # Default (false) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in front-matter.
   # If you set it to true, it will load mathjax / katex script EVERY PAGE.
-  every_page: false
+  every_page: true
 
   mathjax:
-    enable: false
+    enable: true
     # Available values: none | ams | all
-    tags: none
+    tags: ams
 
   katex:
     enable: false
@@ -867,7 +867,7 @@ algolia_search:
 local_search:
   enable: false
   # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  top_n_per_article: 5
   # Unescape html strings to the readable one.
   unescape: false
   # Preload the search data when the page loads.
@@ -954,3 +954,6 @@ darkmode_js:
   libUrl: # Set custom library cdn url for Darkmode.js
 
 
+# hexo-graphviz
+graphviz:
+  enable: true
