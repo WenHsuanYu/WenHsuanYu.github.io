@@ -14,6 +14,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
       - name: Use Node.js 22.17.0
         uses: actions/setup-node@v4
         with:
