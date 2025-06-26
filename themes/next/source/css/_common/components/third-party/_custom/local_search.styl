@@ -1,0 +1,100 @@
+/* 讓 .local-search 包住輸入框與結果容器，並放進側邊欄中 */
+.local-search {
+  position: relative;
+  text-align: left;
+  margin: 10px;
+}
+
+/* 輸入框樣式：全寬 + 有 padding 美觀 */
+.local-search-input-cls {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 搜尋結果容器，浮現在輸入框下方 */
+.local-search-result-cls {
+  position: absolute;
+  top: 40px; /* 距離輸入框下方 */
+  left: 0;
+  width: 90%;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 999;
+  padding: 8px 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: none; /* 初始狀態隱藏 */
+}
+
+/* 關閉按鈕 */
+#local-search-close {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 18px;
+  cursor: pointer;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s;
+}
+
+#local-search-close:hover {
+  transform: rotate(180deg);
+  color: #000;
+}
+
+/* 結果清單 */
+.local-search-result-cls ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.local-search-result-cls li {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.local-search-result-cls li:last-child {
+  border-bottom: none;
+}
+
+.local-search-result-cls a.search-result-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #007acc;
+  text-decoration: none;
+}
+
+.local-search-result-cls a.search-result-title:hover {
+  text-decoration: underline;
+}
+
+.local-search-result-cls p.search-result {
+  font-size: 13px;
+  color: #444;
+  margin-top: 5px;
+  line-height: 1.5;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+/* 高亮關鍵字 */
+em.search-keyword {
+  background-color: yellow;
+  font-style: normal;
+  color: #d40000;
+}
