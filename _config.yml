@@ -112,3 +112,19 @@ deploy:
   repo: https://github.com/WenHsuanYu/WenHsuanYu.github.io
   branch: master
   message: 'Site updated: {{ deploy_date }}'
+
+
+
+symbols_count_time:
+  symbols: true # 在文章顯示總共有多少字
+  time: true  # 在文章顯示總共需多少時間
+  total_symbols: true # 在頁底顯示總共有多少字
+  total_time: true  # 在頁底顯示總共需多少時間
+  exclude_codeblock: false  # 是否排除程式碼字數
+  awl: 2 #平均文字長度，中文為 2, 英文為 5, 預設為 4
+  wpm: 120  # 可以閱讀多少字每分鐘
+  suffix: "mins." # 時間的後綴
+
+sitemap:
+  path: sitemap.xml
+

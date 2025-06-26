@@ -37,9 +37,9 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 # Dark Mode
@@ -96,11 +96,11 @@ open_graph:
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # External url should start with http:// or https://
 menu:
-  #home: / || fa fa-home
-  #about: /about/ || fa fa-user
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
-  #archives: /archives/ || fa fa-archive
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
@@ -157,7 +157,7 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
+  GitHub: https://github.com/WenHsuanYu || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -190,7 +190,7 @@ toc:
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: false
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: false
+  expand_all: true
   # Maximum heading depth of generated toc.
   max_depth: 6
 
@@ -258,9 +258,9 @@ post_meta:
 
 # Post wordcount display settings
 # Dependencies: https://github.com/next-theme/hexo-word-counter
-symbols_count_time:
-  separated_meta: true
-  item_text_total: false
+#symbols_count_time:
+#  separated_meta: true
+#  item_text_total: false
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -372,9 +372,9 @@ codeblock:
     dark: prism-dark
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Available values: default | flat | mac
-    style:
+    style: mac
   # Fold code block
   fold:
     enable: false
@@ -391,7 +391,7 @@ back2top:
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: left | right
   start_at: left
   # Available values: top | bottom
@@ -928,3 +928,29 @@ vendors:
 css: css
 js: js
 images: images
+
+
+symbols_count_time:
+  separated_meta: true  # 在文章顯示時要不要分行
+  item_text_post: true  # 在文章要不要用文字說明(但我設true跟false都一樣有文字)
+  item_text_total: true # 在頁底要不要有文字說明
+
+# Darkmode JS
+# For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js
+darkmode_js:
+  enable: true
+  bottom: '64px' # 距離底端的距離
+  right: 'unset' # 距離右邊的距離(unset就是只需要設定左邊，右邊會自己調整)
+  left: '32px' # 距離左邊的距離(unset就是只需要設定右邊，左邊會自己調整)
+  time: '0.5s' # 切換深淺模式的時間
+  mixColor: 'transparent' # 這個建議不要用，雖然會出現酷酷的一個往外擴散的效果，可是他的顏色會跟原本的背景混再一起，有時候還會讓字不清楚，想玩的可以自己改改看
+  backgroundColor: 'transparent' #背景顏色
+  buttonColorDark: '#100f2c' # 在淺色模式的時候按鈕的顏色
+  buttonColorLight: '#fff' # 在深色模式的時候按鈕的顏色
+  isActivated: false # 這裡如果用true的話是可以自己改寫他的CSS，但我覺得應該沒有必要，詳細可以看github的內的介紹
+  saveInCookies: true # 會儲存到Cookies內，下次來會依照上次你的設定切換到深淺模式
+  label: '🌓' # 可以改成自己像要的表情圖示
+  autoMatchOsTheme: true # 自動切換到跟使用者裝置相同的深淺模式
+  libUrl: # Set custom library cdn url for Darkmode.js
+
+
