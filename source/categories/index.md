@@ -1,5 +1,6 @@
 ---
-title: categories
-date: 2025-06-26 14:15:24
+title: 分類
+type: "categories"
+layout: page
 comments: false
 ---

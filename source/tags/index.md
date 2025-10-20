@@ -1,5 +1,6 @@
 ---
 title: tags
-date: 2025-06-26 14:14:58
+type: "tags"
+layout: page
 comments: false
 ---
