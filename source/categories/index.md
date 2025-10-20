@@ -1,5 +1,7 @@
 ---
 title: categories
-date: 2025-06-26 14:15:24
+type: categories
+layout: page
 comments: false
+date: 2025-10-20 15:57:48
 ---
