@@ -71,6 +71,7 @@ TableGen 是 Domain-Specific Language
 llvm-tblgen。
 
 ]]></content>
+<<<<<<< HEAD
       <categories>
         <category>LLVM_Notes</category>
       </categories>
@@ -90,6 +91,25 @@ llvm-tblgen。
   </entry>
   <entry>
     <title>分類</title>
+||||||| parent of 6454d58 (Site updated:)
+=======
+      <tags>
+        <tag>LLVM</tag>
+        <tag>建置</tag>
+        <tag>CMake</tag>
+        <tag>Ninja</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[關於我 
+我的名字叫余文瑄，對於作業系統、程式語言、編譯器以及後端軟體開發有著濃厚的興趣。
+]]></content>
+  </entry>
+  <entry>
+    <title>categories</title>
+>>>>>>> 6454d58 (Site updated:)
     <url>/categories/index.html</url>
     <content><![CDATA[
 ]]></content>
