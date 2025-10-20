@@ -1,13 +1,13 @@
 ---
 title: LLVM 建置
-tag:
+date: 2025-10-20 00:00:00
+categories:
+  - LLVM_Notes
+tags:
   - LLVM
-  - 建置
   - CMake
   - Ninja
-category:
-  - LLVM_Notes
-date: 2025-10-20 00:00:00
+  - 建置
 ---
 
 
@@ -93,4 +93,4 @@ date: 2025-10-20 00:00:00
     `TableGen` 是 `Domain-Specific Language` (`DSL`) 的一種，用於描述結構化資料，並作為 LLVM 建構過程的一部分產生 C/C++ 程式碼。轉換工具為 `llvm-tblgen`。
 
 
- 
+
