@@ -71,6 +71,9 @@ TableGen 是 Domain-Specific Language
 llvm-tblgen。
 
 ]]></content>
+      <categories>
+        <category>LLVM_Notes</category>
+      </categories>
       <tags>
         <tag>LLVM</tag>
         <tag>建置</tag>

@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wenhsuanyu.github.io/categories/index.html</loc>
+    
+    <lastmod>2025-10-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wenhsuanyu.github.io/tags/index.html</loc>
+    
+    <lastmod>2025-10-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wenhsuanyu.github.io/2025/10/20/LLVM-%E5%BB%BA%E7%BD%AE/</loc>
     
     <lastmod>2025-10-20</lastmod>
@@ -12,24 +30,6 @@
   
   <url>
     <loc>https://wenhsuanyu.github.io/about/index.html</loc>
-    
-    <lastmod>2025-06-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wenhsuanyu.github.io/tags/index.html</loc>
-    
-    <lastmod>2025-06-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wenhsuanyu.github.io/categories/index.html</loc>
     
     <lastmod>2025-06-26</lastmod>
     
@@ -75,5 +75,12 @@
   </url>
   
 
+  
+  <url>
+    <loc>https://wenhsuanyu.github.io/categories/LLVM-Notes/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
