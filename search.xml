@@ -72,6 +72,7 @@ llvm-tblgen。
 
 ]]></content>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <categories>
         <category>LLVM_Notes</category>
       </categories>
@@ -93,6 +94,12 @@ llvm-tblgen。
     <title>分類</title>
 ||||||| parent of 6454d58 (Site updated:)
 =======
+||||||| parent of de6f869 (Site updated:)
+=======
+      <categories>
+        <category>LLVM_Notes</category>
+      </categories>
+>>>>>>> de6f869 (Site updated:)
       <tags>
         <tag>LLVM</tag>
         <tag>建置</tag>

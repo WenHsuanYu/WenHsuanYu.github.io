@@ -1274,7 +1274,13 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
+<<<<<<< HEAD
     background: #1bc6cf;
+||||||| parent of de6f869 (Site updated:)
+    background: #3da3ff;
+=======
+    background: #ffff93;
+>>>>>>> de6f869 (Site updated:)
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
