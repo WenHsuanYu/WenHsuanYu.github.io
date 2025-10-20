@@ -21,20 +21,20 @@
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="Alex&#39;s blog">
-<meta property="og:url" content="https://wenhsuanyu.github.io/index.html">
+<meta property="og:url" content="https://wenhsuanyu.github.io/archives/2025/10/index.html">
 <meta property="og:site_name" content="Alex&#39;s blog">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:author" content="Wen-Hsuan Yu">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://wenhsuanyu.github.io/">
+<link rel="canonical" href="https://wenhsuanyu.github.io/archives/2025/10/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-tw","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-tw","comments":"","permalink":"","path":"archives/2025/10/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Alex's blog</title>
+<title>Archive | Alex's blog</title>
   
 
 
@@ -195,162 +195,49 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
-
-    
+    <div class="main-inner archive posts-collapse">
 
 
-<div class="post-block">
   
   
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wenhsuanyu.github.io/2025/10/20/LLVM-%E5%BB%BA%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Wen-Hsuan Yu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alex's blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Alex's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/20/LLVM-%E5%BB%BA%E7%BD%AE/" class="post-title-link" itemprop="url">LLVM 建置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2025-10-20 00:00:00 / Modified: 14:37:52" itemprop="dateCreated datePublished" datetime="2025-10-20T00:00:00+08:00">2025-10-20</time>
-    </span>
-
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>634</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="llvm-建構與配置">LLVM 建構與配置 <a href="#llvm-建構與配置"
-class="headerlink"></a></h1>
-<p>本文將介紹如何從原始碼建構 LLVM 並進行基本配置。LLVM
-是一個模組化且可重用的編譯器基礎設施，廣泛應用於各種編譯器和工具鏈中。</p>
-<h2 id="編譯-llvm-所需的軟體包">編譯 LLVM 所需的軟體包 <a
-href="#編譯-llvm-所需的軟體包" class="headerlink"></a></h2>
-<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://llvm.org/docs/GettingStarted.html#software">LLVM
-官方文檔</a> 建議安裝以下軟體包：</p>
-<ul>
-<li>CMake (版本 3.20 或更高)</li>
-<li>python (版本 3.8 或更高)</li>
-<li>zlib (版本 1.2.3.4 或更高)</li>
-<li>GNU Make (版本 3.79, 3.79.1)，在這邊我們使用 Ninja 作為替代</li>
-<li>PyYAML (版本 5.1 或更高)</li>
-</ul>
-<p>部份軟體包是可選的。</p>
-<h2 id="建置-llvm">建置 LLVM <a href="#建置-llvm"
-class="headerlink"></a></h2>
-<ol type="1">
-<li><p>從 Github 上 clone LLVM 原始碼：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/llvm/llvm-project.git</span><br></pre></td></tr></table></figure></li>
-<li><p>安裝 Ninja :</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install ninja-build</span><br></pre></td></tr></table></figure></p></li>
-<li><p>新增建置資料夾並進入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> llvm-build</span><br><span class="line"><span class="built_in">cd</span> llvm-build</span><br></pre></td></tr></table></figure></li>
-<li><p>使用 CMake 產生 LLVM 建構藍圖：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cmake -G Ninja -DLLVM_TARGETS_TO_BUILD=<span class="string">&quot;X86&quot;</span> \</span><br><span class="line">             -DLLVM_USE_LINKER=lld \</span><br><span class="line">             -DCMAKE_BUILD_TYPE=RelWithDebInfo \</span><br><span class="line">             -DBUILD_SHARED_LIBS=ON \</span><br><span class="line">             ../llvm-project/llvm</span><br></pre></td></tr></table></figure>
-<p>使用 Ninja 產生 assembly-like 建置腳本，然後這邊我們對於 cmake
-使用一些客製化選項：</p></li>
-</ol>
-<ul>
-<li><code>-DLLVM_USE_LINKER=lld</code>：指定使用 lld 作為連結器。
-<ul>
-<li><code>lld</code> 是 LLVM 的連結器，提供更快的連結速度。</li>
-</ul></li>
-<li><code>-DCMAKE_BUILD_TYPE=RelWithDebInfo</code>：設定建置類型
-<ul>
-<li>RelWithDebInfo： <code>-O2</code>
-最佳化層級，但同時包含除錯資訊，但是無斷言。</li>
-<li>Debug：無最佳化（<code>-O0</code>），包含完整除錯資訊和斷言，會佔用大量硬碟空間。</li>
-<li>Release：最高最佳化 (<code>-O3</code>)，無除錯和斷言資訊。</li>
-<li>MinSizeRel：針對尺寸進行最佳化。</li>
-</ul></li>
-<li><code>-DLLVM_TARGETS_TO_BUILD="X86"</code>：指定要建置的目標架構
-<ul>
-<li>這邊我們只建置 x86 架構，可以根據需求添加其他架構 (以分號區隔），如
-ARM、AArch64、MIPS 等。</li>
-</ul></li>
-<li><code>-DBUILD_SHARED_LIBS=ON</code>：設定建置為動態共享庫
-<ul>
-<li>連結靜態庫通常比動態庫花費更多時間，多個可執行檔連結到同一組靜態庫時，可執行檔的總大小會比動態庫大得多，這樣可以減少最終二進位檔的大小。</li>
-<li>使用 Debugger 除錯 LLVM 時，
-通常一開始會花費大量時間載入靜態連結的可執行檔，降低除錯效率。</li>
-</ul></li>
-</ul>
-<ol start="5" type="1">
-<li><p>開始建置 LLVM：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ninja all</span><br></pre></td></tr></table></figure>
-<p>ninja
-會根據其平行程度做出決定，以最大平行化來加速建置過程。你也可以使用
-<code>-j</code> 參數來手動設定平行度，例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ninja -j8 all</span><br></pre></td></tr></table></figure></li>
-<li><p>(可選）建構最佳化版的 llvm-tblgen</p>
-<p>加入最佳化版本的參數</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake -DLLVM_OPTIMIZED_TABLEGEN=ON ..</span><br></pre></td></tr></table></figure></p>
-<p><code>TableGen</code> 是 <code>Domain-Specific Language</code>
-(<code>DSL</code>) 的一種，用於描述結構化資料，並作為 LLVM
-建構過程的一部分產生 C/C++ 程式碼。轉換工具為
-<code>llvm-tblgen</code>。</p></li>
-</ol>
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
+        <span class="collection-header">Um..! 1 post. Keep on posting.</span>
+      </div>
 
       
+    <div class="collection-year">
+      <span class="collection-header">2025<span class="collection-year-count">1</span></span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2025-10-20T00:00:00+08:00"
+              content="2025-10-20">
+          10-20
+        </time>
+      </div>
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
+      <div class="post-title">
+          <a class="post-title-link" href="/2025/10/20/LLVM-%E5%BB%BA%E7%BD%AE/" itemprop="url">
+            <span itemprop="name">LLVM 建置</span>
+          </a>
+      </div>
+
       
-    </footer>
+    </header>
   </article>
-</div>
 
 
-
-
+    </div>
+  </div>
+  
+  
+  
 
 </div>
   </main>
