@@ -5,4 +5,12 @@ db.json
 node_modules/
 public/
 .deploy*/
-_multiconfig.yml
+_multiconfig.ymlpublic/
+db.json
+.deploy_git/
+search.xml
+sitemap.xml
+# 若你也追蹤 public 下的年/月 目錄或 css/js，可加上：
+2025/
+css/
+js/
