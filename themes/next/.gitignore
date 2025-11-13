@@ -3,8 +3,3 @@
 .vscode/
 *.log
 *.iml
-yarn.lock
-package-lock.json
-node_modules/
-.nyc_output/
-coverage/
