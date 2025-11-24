@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<head>
+  {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
+  {%- include '_partials/head/head-unique.njk' -%}
+  <title>{% block title %}{% endblock %}</title>
+  {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_scripts/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
+  {%- include '_third-party/math/index.njk' -%}
+  {%- include '_third-party/quicklink.njk' -%}
+  {%- include '_third-party/graphviz.njk' -%}
+
+  {{- next_inject('head') }}
+  <noscript>
+    <link rel="stylesheet" href="{{ url_for(theme.css) }}/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage"{% if theme.motion.enable %} class="use-motion"{% endif %}>
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        {%- include '_partials/header/index.njk' -%}
+        <!-- 搜索表單 -->
+        <div class="local-search">
+          <input type="text" id="local-search-input" class="local-search-input-cls" placeholder="Search...">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </header>
+      {%- if theme.sidebar.display !== 'remove' %}
+        {% block sidebar %}{% endblock %}
+      {%- endif %}
+    </div>
+
+    <div class="main-inner {% block class %}{% endblock %}">
+      {%- include '_partials/header/sub-menu.njk' -%}
+      {% block content %}{% endblock %}
+      {%- include '_partials/comments.njk' -%}
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      {%- include '_partials/languages.njk' -%}
+      {{ partial('_partials/footer.njk', {}, {cache: theme.cache.enable}) }}
+    </div>
+  </footer>
+
+  {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
+
+  {{- next_inject('bodyEnd') }}
+  <!-- <script src="/js/jquery.min.js"></script> -->
+  <script type="text/javascript" src="/js/local-search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 防呆機制：檢查搜尋輸入框是否存在
+      var inputArea = document.querySelector("#local-search-input");
+      var resultArea = document.querySelector("#local-search-result");
+
+      if (!inputArea || !resultArea) {
+        console.error("搜尋輸入框或結果容器未找到，請檢查 HTML 結構。");
+        return;
+      }
+
+      // 初始化搜尋功能
+      inputArea.addEventListener('click', function () {
+        if (typeof getSearchFile === 'function') {
+          getSearchFile();
+          resultArea.style.display = 'block'; // 顯示搜尋結果容器
+        } else {
+          console.error("getSearchFile 函數未定義，請檢查 local-search.js 文件。");
+        }
+      });
+
+      // 禁止回車提交表單
+      inputArea.addEventListener('keydown', function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
